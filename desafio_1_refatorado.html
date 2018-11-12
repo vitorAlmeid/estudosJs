@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>aula funcoes</title>
+	<meta charset="utf-8">
+
+	<script>
+
+		(function(){
+			'use strict';
+
+			var peso = window.prompt('digite o peso');
+			var altura = window.prompt('Digite a sua altura');
+
+			function calculaImc(peso, altura){
+				peso = parseInt(peso);
+				altura = parseInt(altura)/100;
+
+				return peso / (altura * altura);
+			}
+
+			function classificaImc(calc){
+				if (calc < 16.9 ){
+					alert('Você está muito abaixo do peso com o indice: ' + calc);
+				}
+				if (calc >= 17 && calc < 18.4 ) {
+					alert('Você está abaixo do peso com o indice: ' + calc);
+				}
+				if (calc > 18.4 && calc < 24.9) {
+					alert('Você está com o pesso normal com o indice: ' + calc);
+				}
+				if (calc > 24.9 && calc < 29.9) {
+					alert('Você está acima do peso com o indice ' + calc);
+				}
+				if (calc > 29.9 && calc < 34.9) {
+					alert('Você está com obesidade grau 1 com o indice: ' + calc);
+				}
+				if (calc > 34.9 && calc < 40) {
+					alert('Você está com obesidade grau 2 com o indice: ' + calc);
+				}
+				if (calc > 40) {
+					alert('Você está com obesidade grau 3 com o indice: ' + calc);
+				}
+			}
+			classificaImc(calculaImc(peso, altura));
+		})();
+	</script>
+
+</head>
+<body>
+	<h1>Calcula imc</h1>
+
+</body>
+</html>
